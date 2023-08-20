@@ -23,7 +23,8 @@
 	<modules>
 		<module>api-gateway</module>
 		<module>eureka-server</module>
-		<module>hello-world-ms</module>
+		<module>config-server</module>
+		<module>greeting-micro-service</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
