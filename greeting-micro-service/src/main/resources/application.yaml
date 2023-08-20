@@ -11,7 +11,7 @@ management:
     endpoints:
         web:
             exposure:
-                include: health,info,beans
+                include: info
     info:
         env:
             enabled: true
