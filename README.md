@@ -107,9 +107,9 @@ eureka:
             defaultZone: http://localhost:8761/eureka
 ```
 * `spring.cloud.gateway.discovery.locator` must be `enabled` and `lower-case-service-id` is set to `true` to use micro service Ids in lower case.
-* `spring.cloud.gateway.routes` contains an array of routes which gateway will process. In our case only one route is described for path `/hello/world`.
+* `spring.cloud.gateway.routes` contains an array of routes which gateway will process. In our case only one route is described for path `/greeting`.
 This path is used in our microservice (see below). The route config provides possibility to have access to microservive without microservice Id in URL.
-So instead of `/hello-world-ms/hello/world` we can just use `/hello/world` and the gateway will forward the request to the appropriate microservice.
+So instead of `/greeting-ms/greeting` we can just use `/greeting` and the gateway will forward the request to the appropriate microservice.
 * `eureka.client.service-url.defaultZone` defines URL of Eureka service.
 
 ## Configuration server
@@ -166,10 +166,12 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class HelloWorldApplication {
+public class GreetingApplication {
+
 	public static void main(String[] args) {
-		SpringApplication.run(HelloWorldApplication.class, args);
+		SpringApplication.run(GreetingApplication.class, args);
 	}
+
 }
 ```
 ```java
