@@ -228,6 +228,3 @@ Also you need to add the following dependencies:
 
 That's all. As you can see, the implementation is very simple, all the difficulties, as always, are hidden in the nuances,
 primarily in the Eureka and Gateway configurations. Also be aware that using a config server with config files inside is not a good idea for real world applications.
-
-
-
