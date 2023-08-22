@@ -6,6 +6,8 @@ spring:
         name: greeting-ms
     config:
         import: optional:configserver:http://localhost:8888
+    banner:
+        location: classpath:banner.txt
 
 management:
     endpoints:

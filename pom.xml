@@ -23,8 +23,8 @@
 	<modules>
 		<module>eureka-server</module>
 		<module>config-server</module>
-		<module>greeting-micro-service</module>
 		<module>api-gateway</module>
+		<module>greeting-micro-service</module>
 	</modules>
 	<dependencyManagement>
 		<dependencies>
