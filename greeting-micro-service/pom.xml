@@ -2,6 +2,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
+
 	<parent>
 		<groupId>dev.example</groupId>
 		<artifactId>spring-micro-demo</artifactId>
@@ -9,13 +10,33 @@
 	</parent>
 
 	<groupId>dev.example</groupId>
-	<artifactId>eureka-server</artifactId>
-	<description>Eureka server for the DEMO</description>
+	<artifactId>greeting-micro-service</artifactId>
+
+	<name>Greeting micro service</name>
+	<description>This is just a trivial microservice to demonstrate how to build and run Spring cloud infrastructure together</description>
+
+	<properties>
+		<timestamp>${maven.build.timestamp}</timestamp>
+		<maven.build.timestamp.format>yyyy-MM-dd:HH.mm.SS</maven.build.timestamp.format>
+	</properties>
 
 	<dependencies>
 		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+		<dependency>
 			<groupId>org.springframework.cloud</groupId>
-			<artifactId>spring-cloud-starter-netflix-eureka-server</artifactId>
+			<artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.springframework.cloud</groupId>
+			<artifactId>spring-cloud-starter-config</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-actuator</artifactId>
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
@@ -30,7 +51,7 @@
 	            <groupId>org.springframework.boot</groupId>
 	            <artifactId>spring-boot-maven-plugin</artifactId>
                     <configuration>
-                       <jmxPort>9002</jmxPort>
+                       <jmxPort>9004</jmxPort>
 	            </configuration>
 	        </plugin>
 	    </plugins>

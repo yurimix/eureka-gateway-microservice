@@ -1,0 +1,44 @@
+server:
+    port: 0
+
+spring:
+    application:
+        name: greeting-ms
+    config:
+        import: optional:configserver:http://localhost:8888
+    banner:
+        location: classpath:banner.txt
+
+management:
+    endpoints:
+        web:
+            exposure:
+                include: info
+    info:
+        env:
+            enabled: true
+        build:
+            enabled: true
+
+info:
+    application:
+        name: @project.name@
+        description: @project.description@
+        version: @project.version@
+        build-time: @timestamp@
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://localhost:8761/eureka
+    instance:
+        instance-id: ${spring.application.name}:${random.value}
+
+logging.level:
+    com.netflix:
+        discovery: WARN
+        eureka: WARN
+    root: INFO
+
+logging.pattern:
+    console: '%d{yyyy-MM.dd HH:mm:ss.SSS XXX} [%-5level] [%-40logger{1}] %msg%n'

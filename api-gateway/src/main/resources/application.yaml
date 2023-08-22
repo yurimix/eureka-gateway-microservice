@@ -11,10 +11,12 @@ spring:
                     enabled: true
                     lower-case-service-id: true
             routes:
-            -   id: hello
+            -   id: greeting
                 predicates:
-                - Path=/hello/world
-                uri: lb://hello-world-ms
+                - Path=/greeting
+                uri: lb://greeting-ms
+    banner:
+        location: classpath:banner.txt
 
 eureka:
     client:
