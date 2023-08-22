@@ -1,4 +1,4 @@
-# Spring Cloud: Eureka + API Gateway + Microservice
+# Spring Cloud: Eureka + Gateway + Config + Microservice
 This is just an example how to build, configure and run bunch of few Spring Cloud features together.
 
 ## Eureka
@@ -53,7 +53,7 @@ Spring Cloud Eureka requires only one dependency (excluding test dependencies):
 
 At a minimum, this is all you need to do to get the Eureka service up and running.
 
-## API Gateway
+## Gateway
 The next component of this example is the API Gateway.
 Spring Cloud contains a reactive implementation of the Gateway API, for this you need to include related dependencies in your project:
 ```xml
